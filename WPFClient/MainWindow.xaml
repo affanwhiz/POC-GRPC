@@ -1,0 +1,24 @@
+﻿<Window x:Class="WPFClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFClient"
+        mc:Ignorable="d"
+        Title="Client" Height="450" Width="800">
+    <Grid Margin="0,0,0,70">
+        <Button x:Name="Send_Message" Content="Send Message" HorizontalAlignment="Left" Margin="72,113,0,0" VerticalAlignment="Top" Height="28" Width="100" Click="Send_Message_ClickAsync"/>
+        <Button x:Name="Start_Task_Component" Content="Start Task UI" HorizontalAlignment="Left" Margin="72,152,0,0" VerticalAlignment="Top" Width="100" Height="28" Click="Start_Task_Component_ClickAsync"/>
+        <Button x:Name="Start_Without_UI" Content="Start Without UI" HorizontalAlignment="Left" Margin="72,190,0,0" VerticalAlignment="Top" Height="28" Width="100" Click="Start_Without_UI_ClickAsync"/>
+        <Button x:Name="Exit_Task" Content="Exit Task" HorizontalAlignment="Left" Margin="72,230,0,0" VerticalAlignment="Top" Width="100" Height="28" Click="Exit_Task_ClickAsync"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="147" Margin="202,111,0,0" VerticalAlignment="Top" Width="530" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="textBoxMessage" HorizontalAlignment="Left" Margin="71,44,0,0" TextWrapping="Wrap" Text="Type a Message to Send to GRPC Server" VerticalAlignment="Top" Width="661" Height="47" />
+
+    </Grid>
+</Window>

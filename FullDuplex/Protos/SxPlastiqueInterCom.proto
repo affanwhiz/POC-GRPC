@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option csharp_namespace = "FullDuplex.Protos";
+
+package SxPlastiqueInterCom;
+
+service Messaging {
+	rpc CreateStreaming (stream SxMessage) 
+	returns (stream SxMessage);
+};
+
+message SxMessage
+{
+	string clientid = 1;
+	ClientType clientType = 2;
+	string friendlyName = 3;
+	MessageType messageType = 5;
+	ResponseType response = 6;
+	int64 messageTime = 7;
+	string Message = 8;
+
+}
+
+enum ClientType 
+{
+	CT_ALL = 0;
+	CT_TWAIN = 1;
+	CT_VENDING = 2;
+	CT_CONTENTSERVER = 3;
+	CT_OPERATORPANEL = 4;
+	CT_OCR = 5;
+}
+
+enum MessageType 
+{
+	MT_UNDEFINED = 0;
+	MT_LOGINFO = 1;
+	MT_TWAIN = 2;
+	MT_VENDING =3;
+	MT_OCR = 4;
+	MT_RUNTASKUI = 5;
+	MT_RUNTASKNOUI = 6;
+	MT_EXITTASK = 7;
+}
+
+enum ResponseType 
+{
+	RT_UNDEFINED = 0;
+	RT_REQUIRED = 1;
+	RT_NOT_REQUIRED = 2;
+}
+
+
