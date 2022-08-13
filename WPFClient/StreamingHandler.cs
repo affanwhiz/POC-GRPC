@@ -62,7 +62,7 @@ namespace WPFClient
         public async Task WriteToStream(
           IClientStreamWriter<SxMessage> requestStream, string input, MessageType messageType)
         {
-            await requestStream.WriteAsync(new SxMessage { Message = input, MessageType = GetMessageType});
+            await requestStream.WriteAsync(new SxMessage {Clientid = "1", Message = input, MessageType = GetMessageType});
         }
     }
 }

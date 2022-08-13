@@ -9,5 +9,12 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
+  },
+  "HttpsInlineCertFile": {
+    "Url": "https://localhost:5215",
+    "Certificate": {
+      "Path": "<cert.cer>",
+      "Password": "<*123456789>"
+    }
   }
 }
